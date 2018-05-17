@@ -62,7 +62,12 @@ public class EmployeeJPATest {
     public void should_return_employee_name_when_employee_salary_is_max_and_given_company_id_() throws Exception {
         //3.找出一个薪资最高且公司ID是1的雇员以及该雇员的name
         Employee expectedEmployee = new Employee("xiaohong",19,"female",7000,1, 1);
+        Employee actualEmployee = employeeRepository.findTopEmployeeByCompanyIdOrderBySalaryDesc(1);
         String actualName = null;
+        if (actualEmployee != null) {
+            actualName = actualEmployee.getName();
+        }
+
         assertThat(actualName).isEqualTo(expectedEmployee.getName());
     }
 
