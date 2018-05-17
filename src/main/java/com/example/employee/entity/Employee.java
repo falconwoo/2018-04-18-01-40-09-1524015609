@@ -2,9 +2,14 @@ package com.example.employee.entity;
 
 import lombok.Data;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 @Data
+@Entity
 public class Employee {
 
+    @Id
     private int id;
     private String name;
     private int age;
@@ -12,7 +17,7 @@ public class Employee {
     private int companyId;
     private int salary;
 
-    public Employee(String name, int age, String gender, int salary, int id, int companyId) {
+    public Employee(String name, int age, String gender, int salary, int companyId, int id) {
         this.id = id;
         this.name = name;
         this.age = age;
