@@ -93,7 +93,7 @@ public class EmployeeJPATest {
     public void should_return_influence_lines_when_update_employee_name() throws Exception {
         //6.将xiaohong的名字改成xiaobai,输出这次修改影响的行数
         Integer expectedLine = 1;
-        Integer actualLine = null;
+        Integer actualLine = employeeRepository.changeEmployeeName("xiaohong","xiaobai");
         assertThat(actualLine).isEqualTo(expectedLine);
     }
 
