@@ -7,6 +7,5 @@ import javax.persistence.Id;
 public class Company {
     @Id
     private int id;
-
     private String companyName;
 }
